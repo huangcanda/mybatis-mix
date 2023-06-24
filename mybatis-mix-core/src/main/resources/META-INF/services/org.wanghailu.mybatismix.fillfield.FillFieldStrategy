@@ -1,0 +1,4 @@
+org.wanghailu.mybatismix.fillfield.strategy.FillCurrentTime
+org.wanghailu.mybatismix.fillfield.strategy.FillPrimaryId
+org.wanghailu.mybatismix.fillfield.strategy.FillDefaultVersion
+org.wanghailu.mybatismix.fillfield.strategy.FillUpdatedVersion

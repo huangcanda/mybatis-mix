@@ -1,0 +1,39 @@
+{
+  "properties": [
+    {
+      "name": "mybatis.configuration-properties.close-local-cache",
+      "type": "java.lang.Boolean",
+      "description": "是否关闭mybatis自带的一级缓存，默认是false"
+    },
+    {
+      "name": "mybatis.configuration-properties.default-executor-type",
+      "type": "java.lang.Boolean",
+      "description": "默认执行器，默认为SIMPLE"
+    },
+    {
+      "name": "mybatis.configuration-properties.default-batch-executor-type",
+      "type": "java.lang.Boolean",
+      "description": "默认的批处理执行器，默认为BATCH-REUSE"
+    },
+    {
+      "name": "mybatis.configuration-properties.logging.log-sql",
+      "type": "java.lang.Boolean",
+      "description": "是否打印sql日志，默认为true"
+    },
+    {
+      "name": "mybatis.configuration-properties.logging.log-full-sql",
+      "type": "java.lang.Boolean",
+      "description": "是否额外打印完整的sql日志，默认为false"
+    },
+    {
+      "name": "mybatis.configuration-properties.logging.format-full-sql",
+      "type": "java.lang.Boolean",
+      "description": "是否打印额外的完整的sql日志，默认为false"
+    },
+    {
+      "name": "mybatis.configuration-properties.hot-deploy.enable",
+      "type": "java.lang.Boolean",
+      "description": "是否开启xml文件热部署，默认为false"
+    }
+  ]
+}

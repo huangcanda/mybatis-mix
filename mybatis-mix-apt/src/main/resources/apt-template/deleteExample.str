@@ -1,0 +1,34 @@
+package ${packageName};
+
+import org.wanghailu.mybatismix.example.BaseDeleteExample;
+import ${className};
+import javax.annotation.Generated;
+import java.util.function.Consumer;
+
+/**
+ *  Auto generate by mybatis-mix
+ *  Synchronize from ${simpleClassName} and auto compile
+ *  Don't modify it
+ */
+@Generated("org.wanghailu.mybatismix.apt.processor.GenerateExampleClassAnnotationProcessor")
+public class ${simpleClassName}DeleteExample extends BaseDeleteExample<${simpleClassName}> {
+
+    public static ${simpleClassName}DeleteExample from${simpleClassName}(){
+        return new ${simpleClassName}DeleteExample();
+    }
+
+    public static ${simpleClassName}DeleteExample newExample(){
+        return new ${simpleClassName}DeleteExample();
+    }
+
+    protected ${simpleClassName}DeleteExample() {
+        super(${simpleClassName}.class);
+    }
+
+    public ${simpleClassName}DeleteExample where(Consumer<${simpleClassName}Criteria> func){
+        ${simpleClassName}Criteria andCriteria = new ${simpleClassName}Criteria(false);
+        func.accept(andCriteria);
+        this.whereCondition = andCriteria;
+         return this;
+    }
+}

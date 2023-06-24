@@ -1,0 +1,6 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.wanghailu.mybatismix.util.SpringUtils,\
+org.wanghailu.mybatismix.boot.PropertiesBeanPostProcessor,\
+org.wanghailu.mybatismix.boot.MyBatisMixAutoConfiguration,\
+org.wanghailu.mybatismix.boot.RefreshPropertiesBeanDefinitionRegistryPostProcessor

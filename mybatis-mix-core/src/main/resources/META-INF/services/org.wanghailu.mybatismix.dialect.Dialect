@@ -1,0 +1,7 @@
+org.wanghailu.mybatismix.dialect.Db2Dialect
+org.wanghailu.mybatismix.dialect.MysqlDialect
+org.wanghailu.mybatismix.dialect.OracleDialect
+org.wanghailu.mybatismix.dialect.PgDialect
+org.wanghailu.mybatismix.dialect.H2Dialect
+org.wanghailu.mybatismix.dialect.DmDialect
+org.wanghailu.mybatismix.dialect.GbasedbtDialect

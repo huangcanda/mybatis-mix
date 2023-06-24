@@ -1,0 +1,51 @@
+package ${packageName};
+
+import org.wanghailu.mybatismix.example.BaseQueryExample;
+import ${className};
+import javax.annotation.Generated;
+import java.util.function.Consumer;
+
+/**
+ *  Auto generate by mybatis-mix
+ *  Synchronize from ${simpleClassName} and auto compile
+ *  Don't modify it
+ */
+@Generated("org.wanghailu.mybatismix.apt.processor.GenerateExampleClassAnnotationProcessor")
+public class ${simpleClassName}QueryExample extends BaseQueryExample<${simpleClassName},${simpleClassName}QueryExample> {
+
+    public static ${simpleClassName}QueryExample from${simpleClassName}(){
+        return new ${simpleClassName}QueryExample();
+    }
+
+    public static ${simpleClassName}QueryExample newExample(){
+        return new ${simpleClassName}QueryExample();
+    }
+
+    protected ${simpleClassName}QueryExample() {
+        super(${simpleClassName}.class);
+    }
+
+    public ${simpleClassName}QueryExample where(Consumer<${simpleClassName}Criteria> func){
+        ${simpleClassName}Criteria andCriteria = new ${simpleClassName}Criteria(false);
+        func.accept(andCriteria);
+        this.whereCondition = andCriteria;
+         return this;
+    }
+
+    protected SelectFieldItem selectItem;
+
+    public SelectFieldItem select(){
+        if(selectItem==null){
+            selectItem  = new SelectFieldItem();
+        }
+        return selectItem;
+    }
+    ${groupByBlock}
+    ${orderByBlock}
+    public class SelectFieldItem {
+        ${selectFieldItemBlock}
+        public ${simpleClassName}QueryExample endSelect(){
+            return ${simpleClassName}QueryExample.this;
+        }
+    }
+}

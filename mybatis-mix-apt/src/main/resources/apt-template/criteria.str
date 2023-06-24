@@ -1,0 +1,34 @@
+package ${packageName};
+
+import org.wanghailu.mybatismix.example.criteria.BaseCriteria;
+import org.wanghailu.mybatismix.example.criteria.FieldCriteria;
+import ${className};
+import javax.annotation.Generated;
+import java.util.function.Consumer;
+
+/**
+ *  Auto generate by mybatis-mix
+ *  Synchronize from ${simpleClassName} and auto compile
+ *  Don't modify it
+ */
+@Generated("org.wanghailu.mybatismix.apt.processor.GenerateExampleClassAnnotationProcessor")
+public class ${simpleClassName}Criteria extends BaseCriteria<${simpleClassName}Criteria> {
+${fieldCriteriaBlock}
+    protected ${simpleClassName}Criteria(boolean isOrLogic) {
+        super(${simpleClassName}.class,isOrLogic);
+    }
+${fieldCriteriaMethodBlock}
+    public ${simpleClassName}Criteria or(Consumer<${simpleClassName}Criteria> func) {
+        ${simpleClassName}Criteria x = new ${simpleClassName}Criteria(true);
+        func.accept(x);
+        addCriterion(x);
+        return this;
+    }
+
+    public ${simpleClassName}Criteria and(Consumer<${simpleClassName}Criteria> func) {
+        ${simpleClassName}Criteria x = new ${simpleClassName}Criteria(false);
+        func.accept(x);
+        addCriterion(x);
+        return this;
+    }
+}

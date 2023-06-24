@@ -1,0 +1,49 @@
+## default config
+application:
+  name: test
+mybatis:
+  configLocation: classpath:/META-INF/mybatis/mybatis-config.xml
+  configurationProperties:
+    logging:
+      log-full-sql: true
+  configuration:
+    cacheEnabled: true
+    mapUnderscoreToCamelCase: true
+    mapperLocations: org.wanghailu.mybatismix.test
+    jdbc-type-for-null: null
+spring:
+  profiles:
+    active: dev
+  lifecycle:
+    timeout-per-shutdown-phase: 120s
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+  metric:
+    export:
+      prometheus:
+        enabled: true
+
+logging:
+  level:
+    root: debug
+  config: classpath:logback-spring.xml
+  file:
+    name: ./log/mybatis-mix-test
+---
+spring:
+  profiles: dev
+  datasource:
+    name: dataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: test
+    password: test

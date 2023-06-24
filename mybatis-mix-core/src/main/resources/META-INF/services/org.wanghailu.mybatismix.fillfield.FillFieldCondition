@@ -1,0 +1,3 @@
+org.wanghailu.mybatismix.fillfield.condition.FillFieldConditionOnInsert
+org.wanghailu.mybatismix.fillfield.condition.FillFieldConditionOnUpdate
+org.wanghailu.mybatismix.fillfield.condition.FillFieldConditionOnInsertAndUpdate
