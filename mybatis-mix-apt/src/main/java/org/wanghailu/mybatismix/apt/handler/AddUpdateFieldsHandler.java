@@ -40,7 +40,11 @@ public class AddUpdateFieldsHandler extends BaseAnnotationHandler<JavacClassCont
     }
 
     private void checkExtendsBaseExactUpdateRecord() {
-        Type updateFieldsRecordType = context.getSymbolFromSimpleClassName("org.wanghailu.mybatismix.model.ExactUpdateEnable").type;
+        Symbol symbol = context.getSymbolFromSimpleClassName("org.wanghailu.mybatismix.model.ExactUpdateEnable");
+        if(symbol==null){
+            throw new NullPointerException("找不到org.wanghailu.mybatismix.model.ExactUpdateEnable的符号");
+        }
+        Type updateFieldsRecordType = symbol.type;
         //先判断是否有实现接口
         if(context.typeIndexOf(context.getClassSymbol().type,updateFieldsRecordType)!=-1){
             return;

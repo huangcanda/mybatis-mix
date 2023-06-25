@@ -5,6 +5,7 @@ import org.wanghailu.mybatismix.annotation.EnableGenerateExampleClass;
 import org.wanghailu.mybatismix.annotation.FillNowOnInsert;
 import org.wanghailu.mybatismix.annotation.FillNowOnUpdate;
 import org.wanghailu.mybatismix.annotation.LogicDelete;
+import org.wanghailu.mybatismix.model.BaseExactUpdateRecord;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ import java.util.Date;
 @EnableExactUpdateModel
 @LogicDelete
 @EnableGenerateExampleClass
-public class UserEntity{
+public class UserEntity extends BaseExactUpdateRecord {
     
     @Id
     private Long id;
