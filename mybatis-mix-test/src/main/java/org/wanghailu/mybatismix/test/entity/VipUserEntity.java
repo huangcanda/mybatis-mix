@@ -1,6 +1,6 @@
 package org.wanghailu.mybatismix.test.entity;
 
-import org.wanghailu.mybatismix.annotation.EnableExactUpdateModel;
+import org.wanghailu.mybatismix.model.EnableExactUpdateModel;
 import org.wanghailu.mybatismix.annotation.EnableGenerateExampleClass;
 import org.wanghailu.mybatismix.annotation.LogicDelete;
 

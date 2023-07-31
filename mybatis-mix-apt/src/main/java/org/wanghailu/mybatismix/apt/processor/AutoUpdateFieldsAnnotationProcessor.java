@@ -13,7 +13,7 @@ import javax.tools.Diagnostic;
  * @author cdhuang
  * @date 2021/12/17
  */
-@SupportedAnnotationTypes("org.wanghailu.mybatismix.annotation.EnableExactUpdateModel")
+@SupportedAnnotationTypes("org.wanghailu.mybatismix.model.EnableExactUpdateModel")
 public class AutoUpdateFieldsAnnotationProcessor extends BaseModifyTreeProcessor {
     
     @Override

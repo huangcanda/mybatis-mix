@@ -1,4 +1,4 @@
-package org.wanghailu.mybatismix.annotation;
+package org.wanghailu.mybatismix.model;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Inherited;

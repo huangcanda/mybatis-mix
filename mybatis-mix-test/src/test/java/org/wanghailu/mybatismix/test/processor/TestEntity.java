@@ -2,7 +2,7 @@ package org.wanghailu.mybatismix.test.processor;
 
 /*import lombok.Data;*/
 import org.wanghailu.mybatismix.annotation.AutoComment;
-import org.wanghailu.mybatismix.annotation.EnableExactUpdateModel;
+import org.wanghailu.mybatismix.model.EnableExactUpdateModel;
 
 import javax.persistence.Transient;
 import java.io.Serializable;

@@ -57,7 +57,7 @@ public class AddUpdateFieldsHandler extends BaseAnnotationHandler<JavacClassCont
                 needAddExtend = true;
             } else if(context.typeIndexOf(parentClassSymbol.type,updateFieldsRecordType)!=-1){
                 return;
-            }else if(context.isContainAnnotation(parentClassSymbol,"org.wanghailu.mybatismix.annotation.EnableExactUpdateModel")){
+            }else if(context.isContainAnnotation(parentClassSymbol,"org.wanghailu.mybatismix.model.EnableExactUpdateModel")){
                 return;
             }else{
                 context.getMessager().printMessage(Diagnostic.Kind.ERROR, "使用注解@EnableExactUpdateModel的类必须继承BaseExactUpdateRecord类。");
