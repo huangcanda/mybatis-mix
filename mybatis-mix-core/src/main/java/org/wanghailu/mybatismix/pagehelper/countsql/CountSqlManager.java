@@ -23,12 +23,7 @@ public class CountSqlManager extends BaseManager {
     public static String defaultGeneratorName;
     static {
         countSqlGeneratorMap.putAll(SpiExtensionLoader.loadSpiExtensionMap(CountSqlGenerator.class));
-        try{
-            Class.forName("com.alibaba.druid.sql.ast.SQLStatement");
-            defaultGeneratorName = OptimizeCountSqlGenerator.NAME;
-        }catch (ClassNotFoundException e){
-            defaultGeneratorName = SimpleCountSqlGenerator.NAME;
-        }
+        defaultGeneratorName = countSqlGeneratorMap.keySet().iterator().next();
     }
 
     public String getCountSql(String baseSql, String dbType) {
