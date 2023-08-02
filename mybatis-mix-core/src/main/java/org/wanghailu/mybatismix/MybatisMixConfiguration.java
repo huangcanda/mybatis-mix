@@ -37,7 +37,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * 重写Configuration,实现MybatisMix逻辑的管理 Created by cd_huang on 2019/4/30.
+ * 重写Configuration,实现MybatisMix逻辑的管理
  */
 public class MybatisMixConfiguration extends Configuration implements PropertiesHelper {
     

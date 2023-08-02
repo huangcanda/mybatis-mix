@@ -8,8 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
- * @author cdhuang
- * @date 2023/1/12
+ * 重写反射工厂，使用FastReflector
  */
 public class FastReflectorFactory extends DefaultReflectorFactory {
     

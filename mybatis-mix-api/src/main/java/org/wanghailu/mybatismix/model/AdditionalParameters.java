@@ -5,9 +5,6 @@ import java.util.Map;
 
 /**
  * 条件参数中，额外的参数
- *
- * @author cdhuang
- * @date 2022/6/30
  */
 public class AdditionalParameters {
     

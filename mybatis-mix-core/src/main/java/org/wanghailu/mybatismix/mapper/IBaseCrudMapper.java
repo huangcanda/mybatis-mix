@@ -5,10 +5,6 @@ import org.wanghailu.mybatismix.constant.UpdateModeEnum;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * @author cdhuang
- * @date 2023/1/12
- */
 public interface IBaseCrudMapper<Entity> extends IMapper {
     
     int insert(Entity entity);

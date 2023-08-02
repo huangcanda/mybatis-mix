@@ -19,8 +19,6 @@ import java.util.List;
 
 /**
  * 基于适配器的执行器
- * @author cdhuang
- * @date 2022/1/28
  */
 public class ExecutorDelegateWrapper implements Executor {
 

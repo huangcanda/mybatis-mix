@@ -15,9 +15,6 @@ import java.util.Map;
 
 /**
  * 拼接一个分页的BoundSql BoundSql表示一个完整的sql语句，sql字符串(参数用？占位符表示) + 参数
- *
- * @author cdhuang
- * @date 2021/9/28
  */
 public class PageBoundSqlBuilder {
     

@@ -13,10 +13,6 @@ import org.wanghailu.mybatismix.mapping.MappedStatementManager;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * @author cdhuang
- * @date 2022/1/27
- */
 public class MappedStatementRouteExecutor extends ExecutorDelegateWrapper {
 
     public MappedStatementRouteExecutor(Executor delegate,MybatisMixConfiguration configuration) {

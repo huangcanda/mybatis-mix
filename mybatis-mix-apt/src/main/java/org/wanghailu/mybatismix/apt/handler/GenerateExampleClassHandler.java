@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.List;
 
 /**
+ * 生成实体类对应的Example类
  * @author cdhuang
  * @date 2023/3/21
  */

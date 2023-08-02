@@ -4,8 +4,6 @@ import org.apache.ibatis.logging.Log;
 
 /**
  * 空日志打印器，啥也不打印。即屏蔽mybatis的sql日志打印
- * @author cdhuang
- * @date 2021/9/24
  */
 public class EmptyLogger implements Log {
     @Override

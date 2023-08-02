@@ -3,11 +3,6 @@ package org.wanghailu.mybatismix.mapper;
 import java.lang.reflect.Method;
 import java.util.concurrent.Callable;
 
-/**
- * 重写方法执行动作
- * @author cdhuang
- * @date 2023/4/7
- */
 public interface IMapperMethodInvoker {
     
     /**

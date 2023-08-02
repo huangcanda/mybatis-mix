@@ -9,10 +9,8 @@ import javax.annotation.processing.SupportedAnnotationTypes;
 import javax.lang.model.element.TypeElement;
 
 /**
- * @author cdhuang
- * @date 2021/11/19
+ * 对MybatisBatchExecute进行支持
  */
-
 @SupportedAnnotationTypes("org.wanghailu.mybatismix.batch.MybatisBatchExecute")
 public class UseBatchExecuteAnnotationProcessor extends BaseModifyTreeProcessor {
     
@@ -22,6 +20,4 @@ public class UseBatchExecuteAnnotationProcessor extends BaseModifyTreeProcessor 
         handler.handle();
         return false;
     }
-    
-    
 }

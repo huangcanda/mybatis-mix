@@ -12,9 +12,6 @@ import java.util.function.Consumer;
 
 /**
  * 使用lambda表达式进行条件设置
- *
- * @author cdhuang
- * @date 2021/10/8
  */
 public class LambdaCriteria<ENTITY> extends BaseCriteria<LambdaCriteria<ENTITY>> {
 

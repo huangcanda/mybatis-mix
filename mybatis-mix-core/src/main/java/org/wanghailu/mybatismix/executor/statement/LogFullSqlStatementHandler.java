@@ -6,7 +6,7 @@ import org.apache.ibatis.session.ResultHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wanghailu.mybatismix.MybatisMixConfiguration;
-import org.wanghailu.mybatismix.logging.LogSqlManager;
+import org.wanghailu.mybatismix.logging.LoggingManager;
 import org.wanghailu.mybatismix.page.mapping.CountMappedStatementSupplier;
 import org.wanghailu.mybatismix.util.TruckUtils;
 
@@ -26,13 +26,13 @@ public class LogFullSqlStatementHandler extends StatementHandlerDelegateWrapper 
     
     protected MappedStatement mappedStatement;
     
-    protected LogSqlManager logSqlManager;
+    protected LoggingManager loggingManager;
     
     public LogFullSqlStatementHandler(StatementHandler delegate, MappedStatement mappedStatement) {
         super(delegate);
         this.mappedStatement = mappedStatement;
         MybatisMixConfiguration configuration = (MybatisMixConfiguration) mappedStatement.getConfiguration();
-        this.logSqlManager = configuration.getManager(LogSqlManager.class);
+        this.loggingManager = configuration.getManager(LoggingManager.class);
     }
     
     @Override
@@ -94,7 +94,7 @@ public class LogFullSqlStatementHandler extends StatementHandlerDelegateWrapper 
     
     protected void logFullSql(long startTime, long result) {
         try {
-            logSqlManager.getLogFullSqlProcessor()
+            loggingManager.getLogFullSqlProcessor()
                     .logFullSql(mappedStatement, startTime, delegate.getBoundSql(), result);
         } catch (Exception e) {
             logger.warn(e.getMessage(), e);

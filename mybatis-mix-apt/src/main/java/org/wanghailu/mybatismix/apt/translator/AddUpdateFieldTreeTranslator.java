@@ -17,8 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 /**
- * @author cdhuang
- * @date 2021/12/17
+ * 遍历语法树添加addUpdateField，记录对应更新值
  */
 public class AddUpdateFieldTreeTranslator extends AddCodeTreeTranslator<AddUpdateFieldTreeTranslator.AddSetFieldContext> {
 

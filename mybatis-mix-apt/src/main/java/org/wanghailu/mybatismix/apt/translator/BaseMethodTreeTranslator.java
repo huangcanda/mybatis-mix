@@ -5,11 +5,6 @@ import com.sun.tools.javac.tree.TreeTranslator;
 import com.sun.tools.javac.util.Names;
 import org.wanghailu.mybatismix.apt.model.JavacMethodContext;
 
-
-/**
- * @author cdhuang
- * @date 2021/11/30
- */
 public abstract class BaseMethodTreeTranslator extends TreeTranslator {
 
     protected JavacMethodContext context;

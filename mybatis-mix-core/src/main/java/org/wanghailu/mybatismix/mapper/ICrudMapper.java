@@ -4,10 +4,6 @@ import org.wanghailu.mybatismix.constant.UpdateModeEnum;
 
 import java.util.List;
 
-/**
- * @author cdhuang
- * @date 2023/1/17
- */
 public interface ICrudMapper<Entity> extends IBaseCrudMapper<Entity>{
     
     int batchInsert(List<Entity> entities);

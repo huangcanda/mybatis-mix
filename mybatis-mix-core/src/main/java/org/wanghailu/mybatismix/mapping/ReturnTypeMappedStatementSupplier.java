@@ -6,8 +6,7 @@ import org.apache.ibatis.mapping.ResultMap;
 import java.util.Arrays;
 
 /**
- * @author cdhuang
- * @date 2021/9/27
+ * 根据指定的返回类型，生成对应的MappedStatement
  */
 public class ReturnTypeMappedStatementSupplier extends BaseMappedStatementSupplier {
 

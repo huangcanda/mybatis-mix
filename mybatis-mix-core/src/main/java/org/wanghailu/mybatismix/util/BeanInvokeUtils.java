@@ -11,7 +11,7 @@ import java.util.Map;
 
 
 /**
- * 调用实体的get和set方法 Created by cd_huang on 2019/6/10.
+ * 调用实体的get和set方法
  */
 public class BeanInvokeUtils {
     

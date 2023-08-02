@@ -9,6 +9,9 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.Properties;
 
+/**
+ * MybatisMixConfiguration的初始化逻辑抽取
+ */
 public class ConfigurationUtils {
     
     public static MybatisMixConfiguration createConfiguration(String configLocation) {

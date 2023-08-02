@@ -7,8 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author cdhuang
- * @date 2023/4/13
+ * 用途同BeanInvokeUtils
  */
 public class FastBeanInvokeUtils {
     

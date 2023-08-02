@@ -42,8 +42,7 @@ import java.util.Optional;
 import java.util.function.Consumer;
 
 /**
- * @author cdhuang
- * @date 2023/3/31
+ * 创建MappedStatement的相关基础方法
  */
 public class MappedStatementCreator {
     

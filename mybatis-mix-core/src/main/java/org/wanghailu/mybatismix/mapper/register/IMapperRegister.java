@@ -9,10 +9,6 @@ import org.wanghailu.mybatismix.support.NamedSpiExtension;
 
 import java.util.Collection;
 
-/**
- * @author cdhuang
- * @date 2023/1/16
- */
 public interface IMapperRegister extends NamedSpiExtension {
     
     Collection<Class<? extends IMapper>> supportMapper();

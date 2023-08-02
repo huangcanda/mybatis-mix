@@ -12,6 +12,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 
 /**
+ * 使用字节码技术加快mybatis中的反射读写
  * @author cdhuang
  * @date 2023/1/12
  */

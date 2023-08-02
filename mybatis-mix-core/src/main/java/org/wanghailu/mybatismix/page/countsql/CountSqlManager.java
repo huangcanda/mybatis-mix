@@ -11,9 +11,10 @@ import org.wanghailu.mybatismix.util.TruckUtils;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.wanghailu.mybatismix.constant.ConfigurationKeyConstant.countSqlGeneratorName;
+
 /**
  * 通过解析sql的方式生成count语句
- * Created by cdhuang on 2020/4/14.
  */
 public class CountSqlManager extends BaseManager {
 
@@ -27,7 +28,7 @@ public class CountSqlManager extends BaseManager {
     }
 
     public String getCountSql(String baseSql, String dbType) {
-        String generatorName = configuration.getProperty("count-sql-generator-name",defaultGeneratorName);
+        String generatorName = configuration.getProperty(countSqlGeneratorName,defaultGeneratorName);
         if(SimpleCountSqlGenerator.NAME.equals(generatorName)){
             return getSimpleCountSql(baseSql,dbType);
         }else{

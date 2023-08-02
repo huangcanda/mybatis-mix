@@ -9,9 +9,6 @@ import java.util.HashSet;
 
 /**
  * 基础类，保存实体中set过的字段，用于在更新实体时只更新set过的字段。
- *
- * @author cdhuang
- * @date 2021/12/16
  */
 public abstract class BaseExactUpdateRecord implements ExactUpdateEnable {
     

@@ -12,9 +12,6 @@ import java.util.Set;
 
 /**
  * Lombok修改语法树后，需要进行重新填充符号表 所以在编译处理的第二轮，获得重新填充的符号表后再进行处理
- *
- * @author cdhuang
- * @date 2022/11/28
  */
 public class ReEnterSymbolProcessor {
     

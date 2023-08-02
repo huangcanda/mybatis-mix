@@ -10,8 +10,8 @@ import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic;
 
 /**
- * @author cdhuang
- * @date 2021/12/17
+ * EnableExactUpdateModel注解的支持
+ * 处理某个实体类，给类里面所有涉及添加addUpdateField方法记录更新的值
  */
 @SupportedAnnotationTypes("org.wanghailu.mybatismix.model.EnableExactUpdateModel")
 public class AutoUpdateFieldsAnnotationProcessor extends BaseModifyTreeProcessor {

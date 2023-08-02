@@ -10,9 +10,6 @@ import javax.lang.model.element.TypeElement;
 /**
  * javac编译插件，自动生成注释的注解@Comment(或自定义的注释的注解)
  * 即用于在程序运行时获得类或属性或者方法的注释信息，通过获得类，属性，方法上的@Comment注解(或自定义注解)
- *
- * @author cdhuang
- * @date 2020/8/3
  */
 
 @SupportedAnnotationTypes({"org.wanghailu.mybatismix.model.annotation.AutoComment"})

@@ -5,6 +5,7 @@ import org.wanghailu.mybatismix.constant.ConfigurationKeyConstant;
 import org.wanghailu.mybatismix.util.TruckUtils;
 
 /**
+ * 基于雪花算法进行主键生成
  * @author cdhuang
  * @date 2023/4/18
  */

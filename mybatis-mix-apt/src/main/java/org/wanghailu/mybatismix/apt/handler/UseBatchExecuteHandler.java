@@ -14,6 +14,7 @@ import org.wanghailu.mybatismix.apt.model.JavacMethodContext;
 import java.util.Set;
 
 /**
+ * 处理MybatisBatchExecute注解，做对应支持，开启批处理
  * @author cdhuang
  * @date 2023/8/1
  */

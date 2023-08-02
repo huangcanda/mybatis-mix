@@ -17,8 +17,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * @author cdhuang
- * @date 2021/12/17
+ * 处理某个实体类，给类里面所有涉及添加addUpdateField方法记录更新的值
  */
 public class AddUpdateFieldsHandler extends BaseAnnotationHandler<JavacClassContext> {
 

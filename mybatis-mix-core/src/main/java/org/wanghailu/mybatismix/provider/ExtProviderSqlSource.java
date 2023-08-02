@@ -11,8 +11,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
 /**
- * @author cdhuang
- * @date 2022/6/30
+ * 配合MapperSqlProvider自定义SqlSource
  */
 public class ExtProviderSqlSource extends BaseEntitySqlSource {
     

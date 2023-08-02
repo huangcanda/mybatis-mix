@@ -12,8 +12,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * @author cdhuang
- * @date 2023/2/1
+ * jdk9+支持
  */
 public class Javac9Function implements JavacFunction{
     

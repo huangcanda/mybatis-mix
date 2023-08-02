@@ -7,8 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author cdhuang
- * @date 2022/12/1
+ * 结果集处理
  */
 public class HandleResultValue {
     

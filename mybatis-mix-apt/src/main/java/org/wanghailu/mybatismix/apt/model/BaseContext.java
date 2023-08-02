@@ -4,8 +4,7 @@ import javax.annotation.processing.Messager;
 import javax.annotation.processing.ProcessingEnvironment;
 
 /**
- * @author cdhuang
- * @date 2021/11/19
+ * BaseContext
  */
 public class BaseContext {
 

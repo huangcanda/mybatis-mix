@@ -8,10 +8,6 @@ import org.apache.ibatis.mapping.SqlSource;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author cdhuang
- * @date 2021/9/27
- */
 public abstract class BaseMappedStatementSupplier {
 
     public static final List<ResultMapping> EMPTY_RESULTMAPPING = new ArrayList<>(0);

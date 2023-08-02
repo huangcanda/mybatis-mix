@@ -3,8 +3,7 @@ package org.wanghailu.mybatismix.apt.model;
 import com.sun.tools.javac.code.Symbol;
 
 /**
- * @author cdhuang
- * @date 2022/1/7
+ * SymbolClassType
  */
 public class SymbolClassType {
 

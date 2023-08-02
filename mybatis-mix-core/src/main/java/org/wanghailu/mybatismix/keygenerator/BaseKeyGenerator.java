@@ -7,6 +7,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 /**
+ * 主键生成器基类
  * @author cdhuang
  * @date 2023/4/17
  */

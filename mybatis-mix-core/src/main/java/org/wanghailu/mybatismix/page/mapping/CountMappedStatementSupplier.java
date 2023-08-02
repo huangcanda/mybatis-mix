@@ -9,9 +9,6 @@ import java.util.Arrays;
 
 /**
  * 定义创建分页MappedStatement的逻辑
- *
- * @author cdhuang
- * @date 2021/9/27
  */
 public class CountMappedStatementSupplier extends BaseMappedStatementSupplier {
 

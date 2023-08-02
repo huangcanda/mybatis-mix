@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * mapper方法参数支持
  * @author cdhuang
  * @date 2023/4/3
  */

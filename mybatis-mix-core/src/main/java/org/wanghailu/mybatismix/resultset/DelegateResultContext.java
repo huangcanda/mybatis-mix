@@ -3,8 +3,7 @@ package org.wanghailu.mybatismix.resultset;
 import org.apache.ibatis.session.ResultContext;
 
 /**
- * @author cdhuang
- * @date 2022/12/1
+ * 装饰ResultContext
  */
 public class DelegateResultContext implements ResultContext {
     

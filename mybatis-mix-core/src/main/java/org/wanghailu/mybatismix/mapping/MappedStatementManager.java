@@ -15,10 +15,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * 对mybatis的MappedStatement进行自定义管理，目前主要逻辑是进行sql日志控制，以及关闭一级缓存
- *
- * @author cdhuang
- * @date 2020/7/14
+ * 对mybatis的MappedStatement进行自定义管理
  */
 public class MappedStatementManager extends BaseManager {
     

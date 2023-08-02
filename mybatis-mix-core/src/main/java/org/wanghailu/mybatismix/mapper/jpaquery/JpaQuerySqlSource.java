@@ -13,6 +13,7 @@ import org.wanghailu.mybatismix.model.Page;
 import org.wanghailu.mybatismix.page.mapping.PageSqlSource;
 
 /**
+ * JPA支持的SqlSource
  * @author cdhuang
  * @date 2023/3/31
  */

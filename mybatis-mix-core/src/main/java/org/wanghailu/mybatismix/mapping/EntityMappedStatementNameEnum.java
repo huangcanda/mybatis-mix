@@ -4,9 +4,7 @@ import org.wanghailu.mybatismix.exception.MybatisMixException;
 import org.wanghailu.mybatismix.mapper.impl.BaseMapperImpl;
 
 /**
- * 使用枚举类，列举所有的增删改查方法，方法出自SimpleSqlProvider，LambdaSqlProvider，ConditionSqlProvider
- * @author cdhuang
- * @date 2022/7/4
+ * 使用枚举类，列举所有的增删改查方法
  */
 @SuppressWarnings("ALL")
 public enum EntityMappedStatementNameEnum {

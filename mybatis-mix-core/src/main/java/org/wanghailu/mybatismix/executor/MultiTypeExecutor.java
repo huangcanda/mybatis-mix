@@ -13,7 +13,6 @@ import java.util.Map;
 
 /**
  * 拓展原生mybatis，支持一个事务里同时使用SimpleExecutor和BatchExecutor等多种执行类型执行器
- * Created by cd_huang on 2019/4/24.
  */
 public class MultiTypeExecutor extends ExecutorDelegateWrapper {
     

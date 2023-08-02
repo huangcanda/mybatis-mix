@@ -7,8 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author cdhuang
- * @date 2021/12/19
+ * 语法树节点上下文
  */
 public class TreeNodeContext<T extends TreeNodeContext> {
 

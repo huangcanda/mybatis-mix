@@ -4,8 +4,7 @@ import org.apache.ibatis.session.ResultContext;
 import org.apache.ibatis.session.ResultHandler;
 
 /**
- * @author cdhuang
- * @date 2022/12/1
+ * 装饰ResultHandler
  */
 public class DelegateResultHandler implements ResultHandler {
     

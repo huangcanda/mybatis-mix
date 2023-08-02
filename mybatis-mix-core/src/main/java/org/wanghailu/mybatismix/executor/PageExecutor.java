@@ -22,9 +22,6 @@ import java.util.Map;
 
 /**
  * 分页路由分发执行器
- *
- * @author cdhuang
- * @date 2022/12/27
  */
 public class PageExecutor extends ExecutorDelegateWrapper {
     

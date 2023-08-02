@@ -14,8 +14,7 @@ import javax.lang.model.type.MirroredTypeException;
 import javax.lang.model.type.TypeMirror;
 
 /**
- * @author cdhuang
- * @date 2021/12/17
+ * 处理注解，自动给某个类的所有注释加上Comment注解
  */
 public class AddCommentAnnotationHandler extends BaseAnnotationHandler<JavacClassContext> {
 

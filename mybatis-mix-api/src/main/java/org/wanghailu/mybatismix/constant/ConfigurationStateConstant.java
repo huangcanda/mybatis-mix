@@ -6,19 +6,19 @@ package org.wanghailu.mybatismix.constant;
  */
 public interface ConfigurationStateConstant {
     /**
-     * 0 = 默认为：若更新的对象实现ExactUpdateEnable则使用精准更新，否则使用更新非空的方式
+     * 新建状态
      */
     int NEW=1;
     /**
-     * 10 = 精准更新
+     * 已初始化配置相关内容
      */
     int SET_PROPERTIES=2;
     /**
-     * 20 = 更新非空
+     * 已初始化完成
      */
     int INITIALIZED=3;
     /**
-     * 30 = 更新全部
+     * 组件已关闭的状态
      */
     int CLOSED=4;
 

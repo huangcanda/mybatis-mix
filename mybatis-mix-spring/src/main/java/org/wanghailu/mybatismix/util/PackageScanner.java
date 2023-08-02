@@ -23,7 +23,6 @@ import java.util.Set;
 
 /**
  * 根据包路径和注解，扫描class
- * Created by cd_huang on 2020/4/24.
  */
 public class PackageScanner {
 

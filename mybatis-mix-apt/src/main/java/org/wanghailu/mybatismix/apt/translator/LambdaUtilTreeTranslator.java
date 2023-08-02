@@ -11,10 +11,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author cdhuang
- * @date 2022/1/5
- */
 public class LambdaUtilTreeTranslator extends AddCodeTreeTranslator {
 
     public Map<JCTree.JCLambda, SymbolClassType> lambdaSymbolMap = new HashMap<>();

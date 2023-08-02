@@ -13,9 +13,7 @@ import javax.tools.Diagnostic;
 import java.util.Set;
 
 /**
- * 需要修改类的语法树的处理器，继承该类，暂时仅支持javac
- * @author cdhuang
- * @date 2021/11/30
+ * 需要修改类的语法树的处理器，继承该类，仅支持javac
  */
 public abstract class BaseModifyTreeProcessor extends BaseAnnotationProcessor {
 

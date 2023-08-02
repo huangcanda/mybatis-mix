@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.Calendar;
 
 /**
- * 雪花算法 （目前设定：每毫秒可以允许4096个id，允许1024个workerId） Created by cdhuang on 2020/5/28.
+ * 雪花算法 （目前设定：每毫秒可以允许4096个id，允许1024个workerId）
  */
 public class SnowflakeIDGenImpl {
     

@@ -27,9 +27,6 @@ import java.util.Map;
 /**
  * 修改BatchExecutor类，
  * Batch执行器结合Reuse执行器
- *
- * @author cdhuang
- * @date 2020/11/23
  */
 public class BatchReuseExecutor extends BatchExecutor {
 

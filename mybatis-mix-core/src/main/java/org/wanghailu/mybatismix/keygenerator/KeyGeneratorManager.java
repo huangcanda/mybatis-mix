@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * 主键生成管理
  * @author cdhuang
  * @date 2023/4/17
  */

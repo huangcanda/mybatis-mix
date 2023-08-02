@@ -15,6 +15,7 @@ import org.wanghailu.mybatismix.util.EntityUtils;
 import java.util.List;
 
 /**
+ * Example的Mapper实现基类
  * @author cdhuang
  * @date 2023/1/18
  */

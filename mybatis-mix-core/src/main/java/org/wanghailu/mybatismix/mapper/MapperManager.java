@@ -11,8 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author cdhuang
- * @date 2023/1/16
+ * Mapper相关机制的统一管理
  */
 public class MapperManager extends BaseManager {
     

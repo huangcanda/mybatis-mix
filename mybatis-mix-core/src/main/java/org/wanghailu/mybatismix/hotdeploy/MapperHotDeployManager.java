@@ -1,16 +1,19 @@
 package org.wanghailu.mybatismix.hotdeploy;
 
+import org.apache.ibatis.builder.xml.XMLMapperBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.wanghailu.mybatismix.MybatisMixConfiguration;
 import org.wanghailu.mybatismix.common.BaseManager;
 import org.wanghailu.mybatismix.constant.ConfigurationKeyConstant;
 import org.wanghailu.mybatismix.mapping.MappedStatementManager;
 import org.wanghailu.mybatismix.support.XmlFileResource;
-import org.wanghailu.mybatismix.util.MybatisUtils;
+import org.wanghailu.mybatismix.util.MybatisXmlUtils;
 import org.wanghailu.mybatismix.util.ReflectUtils;
 import org.wanghailu.mybatismix.util.TruckUtils;
 
 import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -20,9 +23,6 @@ import java.util.stream.Collectors;
 
 /**
  * mapper.xml热部署管理器
- *
- * @author cdhuang
- * @date 2021/9/9
  */
 public class MapperHotDeployManager extends BaseManager {
     
@@ -51,7 +51,7 @@ public class MapperHotDeployManager extends BaseManager {
     public void initAfterMybatisInit() {
         if (configuration.getBoolProperty(ConfigurationKeyConstant.hotDeploy$enable, false)) {
             for (XmlFileResource xmlFileResource : xmlFileResources) {
-                String namespace = MybatisUtils.getNamespace(xmlFileResource);
+                String namespace = MybatisXmlUtils.getNamespace(xmlFileResource);
                 pathNamespaceMap.put(xmlFileResource.toString(), namespace);
                 namespacePathMap.put(namespace, xmlFileResource.toString());
             }
@@ -86,12 +86,12 @@ public class MapperHotDeployManager extends BaseManager {
                 configuration.getManager(MappedStatementManager.class).readWriteLock.writeLock().lock();
                 removeMapper(mapperResource);
                 if (eventKindFlag >= 0) {
-                    String namespace = MybatisUtils.getNamespace(mapperResource);
+                    String namespace = MybatisXmlUtils.getNamespace(mapperResource);
                     String oldNamespacePath = namespacePathMap.get(namespace);
                     if (oldNamespacePath != null && !mapperResource.toString().equals(oldNamespacePath)) {
                         throw new RuntimeException("namespace冲突，冲突的另一xml为：" + oldNamespacePath);
                     }
-                    MybatisUtils.loadMybatisXmlMapper(configuration, mapperResource.getInputStream(),
+                    loadMybatisXmlMapper(configuration, mapperResource.getInputStream(),
                             mapperResource.toString());
                     commit(mapperResource, namespace);
                     logger.info("已重新加载" + fileName);
@@ -127,7 +127,7 @@ public class MapperHotDeployManager extends BaseManager {
         try {
             String resource = mapperResource.toString();
             if (lastSuccessMap.containsKey(resource)) {
-                MybatisUtils.loadMybatisXmlMapper(configuration, new ByteArrayInputStream(lastSuccessMap.get(resource)),
+                loadMybatisXmlMapper(configuration, new ByteArrayInputStream(lastSuccessMap.get(resource)),
                         resource);
             }
         } catch (Exception e) {
@@ -173,6 +173,12 @@ public class MapperHotDeployManager extends BaseManager {
             }
         }
         return pathSet;
+    }
+    
+    protected void loadMybatisXmlMapper(MybatisMixConfiguration configuration, InputStream inputStream, String resource) {
+        XMLMapperBuilder xmlMapperBuilder = new XMLMapperBuilder(inputStream,
+                configuration, resource, configuration.getSqlFragments());
+        xmlMapperBuilder.parse();
     }
     
     protected int getMapperSize() {

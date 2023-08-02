@@ -14,6 +14,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 /**
+ * Example方法的注册器
  * @author cdhuang
  * @date 2023/1/16
  */

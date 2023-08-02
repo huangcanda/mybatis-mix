@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
+ * 对结果集进行后置处理
  * @author cdhuang
  * @date 2022/3/25
  */

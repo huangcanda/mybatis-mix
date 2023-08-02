@@ -30,11 +30,10 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+import static org.wanghailu.mybatismix.constant.ConfigurationKeyConstant.mapperShortNamespace;
+
 /**
  * Entity的CURD对应的MappedStatement创建器
- *
- * @author cdhuang
- * @date 2022/6/30
  */
 public class EntityMappedStatementCreator extends MappedStatementCreator {
     
@@ -77,7 +76,7 @@ public class EntityMappedStatementCreator extends MappedStatementCreator {
         List<Class<?>> list = classSet.stream().sorted(Comparator.comparing(Class::getName))
                 .collect(Collectors.toList());
         synchronized (classNamespaceMap) {
-            if (configuration.getBoolProperty("short-namespace", true)) {
+            if (configuration.getBoolProperty(mapperShortNamespace, true)) {
                 initCommonFactorKey(list);
             }
             for (Class<?> entityClass : list) {

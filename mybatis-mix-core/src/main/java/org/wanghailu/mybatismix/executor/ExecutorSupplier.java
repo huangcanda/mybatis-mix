@@ -8,8 +8,6 @@ import org.wanghailu.mybatismix.support.SpiExtension;
 
 /**
  * 定义如何提供一个Executor
- * @author cdhuang
- * @date 2022/12/28
  */
 public interface ExecutorSupplier extends SpiExtension {
     

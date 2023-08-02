@@ -23,8 +23,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
 /**
- * @author cdhuang
- * @date 2021/11/19
+ * JavacClassContext
  */
 public class JavacClassContext extends JavacContext {
 

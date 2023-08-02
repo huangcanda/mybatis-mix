@@ -3,8 +3,7 @@ package org.wanghailu.mybatismix.logging;
 import org.apache.ibatis.logging.Log;
 
 /**
- * @author cdhuang
- * @date 2022/2/24
+ * 对打印日志进行装饰
  */
 public class DelegateLogger implements Log {
 

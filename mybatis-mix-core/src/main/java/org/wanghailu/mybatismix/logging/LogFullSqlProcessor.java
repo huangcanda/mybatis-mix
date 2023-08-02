@@ -19,9 +19,6 @@ import java.util.Locale;
 
 /**
  * 打印拼接后的完全sql
- *
- * @author cdhuang
- * @date 2023/1/30
  */
 public class LogFullSqlProcessor {
     

@@ -22,8 +22,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * @author cdhuang
- * @date 2021/12/17
+ * 对EnableGenerateExampleClass注解进行支持，
+ * 生成实体类对应的Example类
  */
 @SupportedAnnotationTypes("org.wanghailu.mybatismix.annotation.EnableGenerateExampleClass")
 public class GenerateExampleClassAnnotationProcessor extends BaseAnnotationProcessor {

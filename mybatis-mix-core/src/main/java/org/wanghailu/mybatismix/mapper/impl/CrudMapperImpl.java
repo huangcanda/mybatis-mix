@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.function.ToIntFunction;
 
 /**
+ * CRUD实现，基于BaseCrudMapperImpl，多了batch相关的CRUD的实现
  * @author cdhuang
  * @date 2023/1/3
  */

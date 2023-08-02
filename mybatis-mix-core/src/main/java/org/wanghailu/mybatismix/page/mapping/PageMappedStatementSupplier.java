@@ -6,8 +6,6 @@ import org.wanghailu.mybatismix.mapping.BaseMappedStatementSupplier;
 
 /**
  * 定义创建分页MappedStatement的逻辑
- * @author cdhuang
- * @date 2021/9/27
  */
 public class PageMappedStatementSupplier extends BaseMappedStatementSupplier {
 

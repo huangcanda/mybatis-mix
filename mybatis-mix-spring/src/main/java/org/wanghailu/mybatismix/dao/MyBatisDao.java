@@ -16,8 +16,9 @@ import java.util.function.ToIntFunction;
 import java.util.regex.Pattern;
 
 /**
- * MyBatisDao 实现类(dao模块里的核心类，建议多了解了解)
+ * MyBatisDao
  */
+@Deprecated
 public class MyBatisDao extends SqlSessionDaoSupport {
     
     public static final String DYNAMIC_MAPPER_ID = "org.wanghailu.mybatismix.dao.sql.mapper.FrameworkMapper.";

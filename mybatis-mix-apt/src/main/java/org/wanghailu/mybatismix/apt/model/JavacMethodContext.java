@@ -5,8 +5,7 @@ import com.sun.tools.javac.tree.JCTree;
 import org.wanghailu.mybatismix.apt.translator.LambdaUtilTreeTranslator;
 
 /**
- * @author cdhuang
- * @date 2021/11/19
+ * JavacMethodContext
  */
 public class JavacMethodContext extends JavacClassContext {
 

@@ -3,8 +3,6 @@ package org.wanghailu.mybatismix.logging;
 import org.apache.ibatis.logging.Log;
 
 /**
- * @author cdhuang
- * @date 2022/2/24
  */
 public class DebugLogger extends DelegateLogger{
 

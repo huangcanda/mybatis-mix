@@ -18,9 +18,6 @@ import java.util.Map;
 
 /**
  * 定义如何创建一个基础的执行器
- *
- * @author cdhuang
- * @date 2022/12/28
  */
 public class ExecutorManager extends BaseManager {
     

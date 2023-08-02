@@ -20,9 +20,6 @@ import java.util.stream.Collectors;
 
 /**
  * mapper xml文件变化监听器
- *
- * @author cdhuang
- * @date 2021/9/10
  */
 public class MapperHotDeployWatcher implements Runnable {
     

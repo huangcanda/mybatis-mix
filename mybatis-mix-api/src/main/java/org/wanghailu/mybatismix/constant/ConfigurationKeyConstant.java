@@ -29,4 +29,12 @@ public interface ConfigurationKeyConstant {
     String workerId = "key-generator.snowflake.worker-id";
 
     String fillField$idDefaultStrategy = "fill-field.id-default-strategy";
+    
+    String fillField$defaultStrategy = "fill-field.default-strategy";
+    
+    String countSqlGeneratorName ="count-sql-generator-name";
+    
+    String checkLogicDeleteTableExist = "check-logic-delete-table-exist";
+    
+    String mapperShortNamespace = "mapper-short-namespace";
 }

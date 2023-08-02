@@ -8,8 +8,7 @@ import com.sun.tools.javac.util.Name;
 import java.util.ArrayList;
 
 /**
- * @author cdhuang
- * @date 2023/2/1
+ * jdk版本差异的抽象
  */
 public interface JavacFunction {
     

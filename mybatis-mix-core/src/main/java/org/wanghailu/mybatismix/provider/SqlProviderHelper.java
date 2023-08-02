@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
+ * sql生成的辅助类
  * @author cdhuang
  * @date 2023/3/20
  */

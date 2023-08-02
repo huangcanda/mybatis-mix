@@ -12,8 +12,6 @@ import java.util.Map;
 
 /**
  * 记录当前作用域的变量
- * @author cdhuang
- * @date 2021/11/30
  */
 public abstract class AddCodeTreeTranslator<T extends TreeNodeContext<T>> extends BaseMethodTreeTranslator {
 

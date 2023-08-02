@@ -14,6 +14,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.wanghailu.mybatismix.constant.ConfigurationKeyConstant.fillField$defaultStrategy;
+
 /**
  * 字段填充管理器
  * @author cdhuang
@@ -73,7 +75,7 @@ public class FillFieldManager extends BaseManager {
                 EntityPropertyDescriptor propertyDescriptor = EntityUtils
                         .getPropertyDescriptorByFieldName(entityClass, fieldName);
                 Class type = propertyDescriptor.getField().getType();
-                strategyName = configuration.getProperty("fill-field.default." + type.getSimpleName());
+                strategyName = configuration.getProperty(fillField$defaultStrategy+"." + type.getSimpleName());
                 if (PrivateStringUtils.isEmpty(strategyName)) {
                     logger.warn("找不到对应的字段填充策略，类型：{}，字段名：{}", entityClass.getSimpleName(), fieldName);
                     continue;

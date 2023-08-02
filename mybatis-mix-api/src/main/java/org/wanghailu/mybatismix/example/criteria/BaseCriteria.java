@@ -11,9 +11,6 @@ import java.util.Map;
 
 /**
  * 表示一串的条件
- *
- * @author cdhuang
- * @date 2021/2/2
  */
 public class BaseCriteria<CHILD extends BaseCriteria> implements Serializable {
     

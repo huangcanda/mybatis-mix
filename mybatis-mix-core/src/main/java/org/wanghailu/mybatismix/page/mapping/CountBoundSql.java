@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 避免有的时候，根据参数进行count查询时会出错。
- * @author cdhuang
- * @date 2020/6/10
+ * 修改count语句和参数
  */
 public class CountBoundSql extends BoundSql {
 

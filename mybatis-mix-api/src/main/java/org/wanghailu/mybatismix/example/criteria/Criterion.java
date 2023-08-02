@@ -5,8 +5,6 @@ import java.util.List;
 
 /**
  * 条件表达式
- * @author cdhuang
- * @date 2021/2/2
  */
 public class Criterion implements Serializable {
 

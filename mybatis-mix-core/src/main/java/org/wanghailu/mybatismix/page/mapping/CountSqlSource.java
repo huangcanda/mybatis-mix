@@ -9,8 +9,6 @@ import org.wanghailu.mybatismix.page.countsql.CountSqlManager;
 
 /**
  * 生成分页count语句的SqlSource
- * @author cdhuang
- * @date 2021/9/27
  */
 public class CountSqlSource implements SqlSource {
 

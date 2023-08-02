@@ -10,6 +10,8 @@ import org.wanghailu.mybatismix.util.SqlRunner;
 
 import java.util.Collection;
 
+import static org.wanghailu.mybatismix.constant.ConfigurationKeyConstant.checkLogicDeleteTableExist;
+
 /**
  * 校验逻辑删除对应的表是否存在
  * @author cdhuang
@@ -26,7 +28,7 @@ public class LogicDeleteTableChecker {
     }
     
     public void checkTableExist(Collection<Class<?>> classSet) {
-        if(!configuration.getBoolProperty("check-logic-delete-table-exist",true)){
+        if(!configuration.getBoolProperty(checkLogicDeleteTableExist,true)){
             return;
         }
         for (Class<?> aClass : classSet) {

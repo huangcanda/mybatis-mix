@@ -12,13 +12,10 @@ import java.util.Set;
 
 /**
  * 日志打印的 集中管理器
- *
- * @author cdhuang
- * @date 2021/9/8
  */
-public class LogSqlManager extends BaseManager {
+public class LoggingManager extends BaseManager {
     
-    public static LogSqlManager instance;
+    public static LoggingManager instance;
     
     protected static ThreadLocal<Set<String>> noLogMapperList = new ThreadLocal<>();
     
@@ -32,7 +29,7 @@ public class LogSqlManager extends BaseManager {
     
     protected LogFullSqlProcessor logFullSqlProcessor = new LogFullSqlProcessor();
     
-    public LogSqlManager() {
+    public LoggingManager() {
         instance = this;
     }
     

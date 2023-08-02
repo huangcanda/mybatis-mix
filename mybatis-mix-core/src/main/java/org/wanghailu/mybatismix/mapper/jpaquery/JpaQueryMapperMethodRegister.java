@@ -16,6 +16,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 
 /**
+ * Jpa语法支持的注册器
  * @author cdhuang
  */
 public class JpaQueryMapperMethodRegister implements IMapperMethodRegister {

@@ -11,8 +11,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 /**
- * @author cdhuang
- * @date 2023/2/1
+ * jdk8支持
  */
 public class Javac8Function implements JavacFunction{
     
