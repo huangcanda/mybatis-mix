@@ -7,8 +7,8 @@ import org.wanghailu.mybatismix.common.BaseManager;
 import org.wanghailu.mybatismix.support.EntityPropertyDescriptor;
 import org.wanghailu.mybatismix.util.BeanInvokeUtils;
 import org.wanghailu.mybatismix.util.EntityUtils;
-import org.wanghailu.mybatismix.util.SpiExtensionLoader;
 import org.wanghailu.mybatismix.util.PrivateStringUtils;
+import org.wanghailu.mybatismix.util.SpiExtensionLoader;
 
 import java.util.Collection;
 import java.util.HashMap;

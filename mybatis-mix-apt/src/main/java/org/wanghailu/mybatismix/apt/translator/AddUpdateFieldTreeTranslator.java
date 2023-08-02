@@ -8,7 +8,11 @@ import org.wanghailu.mybatismix.apt.help.JavacUtils;
 import org.wanghailu.mybatismix.apt.model.JavacMethodContext;
 import org.wanghailu.mybatismix.apt.model.SymbolClassType;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 

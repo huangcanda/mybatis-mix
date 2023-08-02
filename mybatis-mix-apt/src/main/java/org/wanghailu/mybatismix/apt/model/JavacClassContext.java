@@ -14,7 +14,11 @@ import org.wanghailu.mybatismix.support.TwoTuple;
 import org.wanghailu.mybatismix.util.TruckUtils;
 
 import javax.tools.Diagnostic;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 

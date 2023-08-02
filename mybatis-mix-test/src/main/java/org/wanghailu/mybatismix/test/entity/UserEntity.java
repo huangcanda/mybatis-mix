@@ -1,11 +1,10 @@
 package org.wanghailu.mybatismix.test.entity;
 
-import org.wanghailu.mybatismix.model.EnableExactUpdateModel;
 import org.wanghailu.mybatismix.annotation.EnableGenerateExampleClass;
 import org.wanghailu.mybatismix.annotation.FillNowOnInsert;
 import org.wanghailu.mybatismix.annotation.FillNowOnUpdate;
 import org.wanghailu.mybatismix.annotation.LogicDelete;
-import org.wanghailu.mybatismix.model.BaseExactUpdateRecord;
+import org.wanghailu.mybatismix.model.EnableExactUpdateModel;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

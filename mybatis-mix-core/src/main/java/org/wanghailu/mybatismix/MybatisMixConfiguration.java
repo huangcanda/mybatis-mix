@@ -18,7 +18,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.transaction.Transaction;
 import org.wanghailu.mybatismix.binding.MybatisMixMapperRegistry;
 import org.wanghailu.mybatismix.common.BaseManager;
-import org.wanghailu.mybatismix.keygenerator.SnowflakeIDGenImpl;
 import org.wanghailu.mybatismix.constant.ConfigurationKeyConstant;
 import org.wanghailu.mybatismix.constant.ConfigurationStateConstant;
 import org.wanghailu.mybatismix.executor.ExecutorManager;
@@ -28,8 +27,8 @@ import org.wanghailu.mybatismix.mapping.MappedStatementManager;
 import org.wanghailu.mybatismix.resultset.ExtResultSetHandler;
 import org.wanghailu.mybatismix.support.PropertiesHelper;
 import org.wanghailu.mybatismix.util.MybatisContext;
-import org.wanghailu.mybatismix.util.SpiExtensionLoader;
 import org.wanghailu.mybatismix.util.ReflectUtils;
+import org.wanghailu.mybatismix.util.SpiExtensionLoader;
 import org.wanghailu.mybatismix.util.TruckUtils;
 
 import java.util.LinkedHashMap;

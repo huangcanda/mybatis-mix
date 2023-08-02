@@ -1,7 +1,13 @@
 package org.wanghailu.mybatismix.apt.model;
 
 import com.sun.tools.javac.api.JavacTrees;
-import com.sun.tools.javac.code.*;
+import com.sun.tools.javac.code.Attribute;
+import com.sun.tools.javac.code.Flags;
+import com.sun.tools.javac.code.Symbol;
+import com.sun.tools.javac.code.Symtab;
+import com.sun.tools.javac.code.Type;
+import com.sun.tools.javac.code.TypeTag;
+import com.sun.tools.javac.code.Types;
 import com.sun.tools.javac.comp.Attr;
 import com.sun.tools.javac.comp.Enter;
 import com.sun.tools.javac.model.JavacElements;
@@ -19,7 +25,11 @@ import org.wanghailu.mybatismix.util.PrivateStringUtils;
 import org.wanghailu.mybatismix.util.TruckUtils;
 
 import javax.annotation.processing.ProcessingEnvironment;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 /**
  * @author cdhuang

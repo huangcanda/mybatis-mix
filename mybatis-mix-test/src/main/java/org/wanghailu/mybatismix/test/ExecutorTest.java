@@ -1,8 +1,8 @@
 package org.wanghailu.mybatismix.test;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.wanghailu.mybatismix.batch.MybatisBatchExecute;
 import org.wanghailu.mybatismix.batch.BatchExecuteTemplateBinder;
+import org.wanghailu.mybatismix.batch.MybatisBatchExecute;
 import org.wanghailu.mybatismix.test.entity.UserEntity;
 import org.wanghailu.mybatismix.test.mapper.UserMapper;
 
