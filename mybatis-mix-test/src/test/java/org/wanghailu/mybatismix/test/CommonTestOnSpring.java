@@ -3,6 +3,7 @@ package org.wanghailu.mybatismix.test;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.wanghailu.mybatismix.batch.MybatisBatchExecute;
 import org.wanghailu.mybatismix.constant.UpdateModeEnum;
 import org.wanghailu.mybatismix.example.lambda.LambdaDeleteExample;
 import org.wanghailu.mybatismix.example.lambda.LambdaQueryExample;
@@ -41,6 +42,7 @@ public class CommonTestOnSpring extends BaseTestOnSpring {
     @Autowired
     private UserMapper userMapper;
     @Test
+    @MybatisBatchExecute
     public void crudTest() {
         String[] beanNamesForType= SpringUtils.getBeanFactory().getBeanNamesForType(ICrudMapper.class);
         System.out.println(beanNamesForType);

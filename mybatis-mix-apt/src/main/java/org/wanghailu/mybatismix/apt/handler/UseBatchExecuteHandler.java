@@ -24,7 +24,7 @@ public class UseBatchExecuteHandler extends BaseAnnotationHandler<JavacMethodCon
     
     public UseBatchExecuteHandler(JavacMethodContext context) {
         super(context);
-        originalMethodName = context.getMethodSymbol().name.toString() + "0$$OnMybatisBatchExecute$$";
+        originalMethodName = context.getMethodSymbol().name.toString() + "$$0$$OnMybatisBatchExecute";
     }
     
     @Override

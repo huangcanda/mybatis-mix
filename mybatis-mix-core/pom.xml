@@ -14,10 +14,6 @@
     <dependencies>
         <dependency>
             <groupId>org.wanghailu</groupId>
-            <artifactId>mybatis-mix-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.wanghailu</groupId>
             <artifactId>mybatis-mix-apt</artifactId>
         </dependency>
         <dependency>
@@ -27,6 +23,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
