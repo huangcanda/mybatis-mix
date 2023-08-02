@@ -1,4 +1,4 @@
-package org.wanghailu.mybatismix.pagehelper.countsql;
+package org.wanghailu.mybatismix.page.countsql;
 
 public class OptimizeCountSqlGenerator implements CountSqlGenerator {
 

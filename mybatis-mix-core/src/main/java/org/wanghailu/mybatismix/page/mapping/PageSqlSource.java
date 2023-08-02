@@ -1,4 +1,4 @@
-package org.wanghailu.mybatismix.pagehelper.mapping;
+package org.wanghailu.mybatismix.page.mapping;
 
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
@@ -6,7 +6,7 @@ import org.apache.ibatis.mapping.SqlSource;
 import org.wanghailu.mybatismix.MybatisMixConfiguration;
 import org.wanghailu.mybatismix.dialect.DialectManager;
 import org.wanghailu.mybatismix.model.Pageable;
-import org.wanghailu.mybatismix.pagehelper.PageHelper;
+import org.wanghailu.mybatismix.page.PageHelper;
 
 /**
  * 生成分页limit语句的SqlSource

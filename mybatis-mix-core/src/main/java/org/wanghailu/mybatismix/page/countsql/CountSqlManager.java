@@ -1,4 +1,4 @@
-package org.wanghailu.mybatismix.pagehelper.countsql;
+package org.wanghailu.mybatismix.page.countsql;
 
 import com.alibaba.druid.DbType;
 import com.alibaba.druid.sql.PagerUtils;

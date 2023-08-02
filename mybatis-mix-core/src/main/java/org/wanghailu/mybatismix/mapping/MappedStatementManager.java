@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.wanghailu.mybatismix.common.BaseManager;
 import org.wanghailu.mybatismix.constant.ConfigurationKeyConstant;
 import org.wanghailu.mybatismix.logging.MainControlLogger;
-import org.wanghailu.mybatismix.pagehelper.mapping.CountMappedStatementSupplier;
+import org.wanghailu.mybatismix.page.mapping.CountMappedStatementSupplier;
 import org.wanghailu.mybatismix.util.ReflectUtils;
 
 import java.util.Map;

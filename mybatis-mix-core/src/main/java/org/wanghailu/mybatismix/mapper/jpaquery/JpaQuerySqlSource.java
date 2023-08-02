@@ -10,7 +10,7 @@ import org.wanghailu.mybatismix.common.BaseEntitySqlSource;
 import org.wanghailu.mybatismix.dialect.DialectManager;
 import org.wanghailu.mybatismix.mapping.EntityMappedStatementNameEnum;
 import org.wanghailu.mybatismix.model.Page;
-import org.wanghailu.mybatismix.pagehelper.mapping.PageSqlSource;
+import org.wanghailu.mybatismix.page.mapping.PageSqlSource;
 
 /**
  * @author cdhuang

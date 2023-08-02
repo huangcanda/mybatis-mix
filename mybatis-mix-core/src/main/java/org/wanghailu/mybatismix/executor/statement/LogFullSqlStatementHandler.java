@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wanghailu.mybatismix.MybatisMixConfiguration;
 import org.wanghailu.mybatismix.logging.LogSqlManager;
-import org.wanghailu.mybatismix.pagehelper.mapping.CountMappedStatementSupplier;
+import org.wanghailu.mybatismix.page.mapping.CountMappedStatementSupplier;
 import org.wanghailu.mybatismix.util.TruckUtils;
 
 import java.sql.SQLException;

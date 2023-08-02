@@ -6,5 +6,5 @@ org.wanghailu.mybatismix.keygenerator.KeyGeneratorManager
 org.wanghailu.mybatismix.logging.LogSqlManager
 org.wanghailu.mybatismix.mapper.MapperManager
 org.wanghailu.mybatismix.mapping.MappedStatementManager
-org.wanghailu.mybatismix.pagehelper.countsql.CountSqlManager
+org.wanghailu.mybatismix.page.countsql.CountSqlManager
 org.wanghailu.mybatismix.transaction.TransactionalSessionManager

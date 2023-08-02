@@ -25,6 +25,8 @@ import java.util.Set;
 public class GenerateExampleClassAnnotationProcessor extends BaseAnnotationProcessor {
 
     boolean generated = false;
+    
+    boolean isBscMavenPlugin =false;
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         if (roundEnv.processingOver()) {
@@ -34,6 +36,7 @@ public class GenerateExampleClassAnnotationProcessor extends BaseAnnotationProce
             return false;
         }
         generated = true;
+        isBscMavenPlugin = checkBscMavenPlugin();
         for (TypeElement annotation : annotations) {
             Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(annotation);
             for (Element classElement : elements) {
@@ -42,7 +45,6 @@ public class GenerateExampleClassAnnotationProcessor extends BaseAnnotationProce
                 createExampleClass(classElement, fieldList);
             }
         }
-
         return false;
     }
 
@@ -65,6 +67,9 @@ public class GenerateExampleClassAnnotationProcessor extends BaseAnnotationProce
     }
 
     protected void generateJavaFile(String className, String code) {
+        if(isBscMavenPlugin){
+            return;
+        }
         try {
             JavaFileObject sourceFile = filer.createSourceFile(className);
             try(Writer writer = sourceFile.openWriter()){
@@ -132,5 +137,15 @@ public class GenerateExampleClassAnnotationProcessor extends BaseAnnotationProce
             }
         }
         return type;
+    }
+    
+    private boolean checkBscMavenPlugin(){
+        StackTraceElement[] stackTraceElements =Thread.currentThread().getStackTrace();
+        for (StackTraceElement stackTraceElement : stackTraceElements) {
+            if(stackTraceElement.getClassName().startsWith("org.bsc.maven.plugin.processor")){
+                return true;
+            }
+        }
+        return false;
     }
 }

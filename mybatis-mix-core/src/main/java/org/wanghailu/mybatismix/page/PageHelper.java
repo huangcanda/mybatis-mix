@@ -1,4 +1,4 @@
-package org.wanghailu.mybatismix.pagehelper;
+package org.wanghailu.mybatismix.page;
 
 
 import org.wanghailu.mybatismix.model.Pageable;
@@ -10,7 +10,6 @@ public class PageHelper {
 	
 	private static final ThreadLocal<Pageable> pageThreadLocal = new ThreadLocal<>();
 	
-	private static final String LOCAL_PAGE = "LOCAL_PAGE";
 	/**
 	 * 获取 Page 参数
 	 * @return

@@ -3,7 +3,7 @@ package org.wanghailu.mybatismix.dao;
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.wanghailu.mybatismix.mapping.MappedStatementManager;
 import org.wanghailu.mybatismix.model.Page;
-import org.wanghailu.mybatismix.pagehelper.PageHelper;
+import org.wanghailu.mybatismix.page.PageHelper;
 import org.wanghailu.mybatismix.transaction.TransactionRunner;
 import org.wanghailu.mybatismix.util.MybatisContext;
 import org.wanghailu.mybatismix.util.TruckUtils;

@@ -9,9 +9,9 @@ import org.apache.ibatis.session.RowBounds;
 import org.wanghailu.mybatismix.MybatisMixConfiguration;
 import org.wanghailu.mybatismix.mapping.MappedStatementManager;
 import org.wanghailu.mybatismix.model.Pageable;
-import org.wanghailu.mybatismix.pagehelper.PageHelper;
-import org.wanghailu.mybatismix.pagehelper.mapping.CountMappedStatementSupplier;
-import org.wanghailu.mybatismix.pagehelper.mapping.PageMappedStatementSupplier;
+import org.wanghailu.mybatismix.page.PageHelper;
+import org.wanghailu.mybatismix.page.mapping.CountMappedStatementSupplier;
+import org.wanghailu.mybatismix.page.mapping.PageMappedStatementSupplier;
 import org.wanghailu.mybatismix.util.TruckUtils;
 
 import java.sql.SQLException;

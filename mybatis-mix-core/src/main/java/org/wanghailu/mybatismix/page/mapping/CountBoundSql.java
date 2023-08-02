@@ -1,4 +1,4 @@
-package org.wanghailu.mybatismix.pagehelper.mapping;
+package org.wanghailu.mybatismix.page.mapping;
 
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.ParameterMapping;

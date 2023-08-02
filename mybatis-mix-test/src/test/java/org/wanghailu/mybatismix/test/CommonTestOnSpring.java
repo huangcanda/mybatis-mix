@@ -15,7 +15,7 @@ import org.wanghailu.mybatismix.mapper.ICrudMapper;
 import org.wanghailu.mybatismix.mapper.IExampleMapper;
 import org.wanghailu.mybatismix.mapper.MapperManager;
 import org.wanghailu.mybatismix.model.Page;
-import org.wanghailu.mybatismix.pagehelper.PageHelper;
+import org.wanghailu.mybatismix.page.PageHelper;
 import org.wanghailu.mybatismix.test.base.BaseTestOnSpring;
 import org.wanghailu.mybatismix.test.entity.UserEntity;
 import org.wanghailu.mybatismix.test.entity.VipUserEntity;

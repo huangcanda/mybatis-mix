@@ -5,7 +5,7 @@ import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.wanghailu.mybatismix.constant.DbTypeConstant;
 import org.wanghailu.mybatismix.model.Pageable;
-import org.wanghailu.mybatismix.pagehelper.mapping.PageBoundSqlBuilder;
+import org.wanghailu.mybatismix.page.mapping.PageBoundSqlBuilder;
 
 /**
  * Oracle方言

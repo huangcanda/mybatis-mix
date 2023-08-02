@@ -2,12 +2,10 @@ package org.wanghailu.mybatismix.mapper.impl;
 
 import org.apache.ibatis.session.SqlSession;
 import org.wanghailu.mybatismix.MybatisMixConfiguration;
+import org.wanghailu.mybatismix.batch.BatchExecuteTemplateBinder;
+import org.wanghailu.mybatismix.batch.DefaultBatchExecuteContext;
 import org.wanghailu.mybatismix.constant.UpdateModeEnum;
-import org.wanghailu.mybatismix.executor.DefaultBatchContext;
-import org.wanghailu.mybatismix.executor.ExecutorTypeContext;
 import org.wanghailu.mybatismix.mapper.ICrudMapper;
-import org.wanghailu.mybatismix.support.BatchExecuteFunction;
-import org.wanghailu.mybatismix.transaction.TransactionRunner;
 import org.wanghailu.mybatismix.util.TruckUtils;
 
 import java.util.Arrays;
@@ -70,7 +68,8 @@ public class CrudMapperImpl<Entity> extends BaseCrudMapperImpl<Entity> implement
         if (list.size() == 1) {
             return consumer.applyAsInt(list.get(0));
         }
-        return executeOnBatchMode((context) -> {
+        DefaultBatchExecuteContext batchExecuteContext = new DefaultBatchExecuteContext();
+        BatchExecuteTemplateBinder.getTemplate().executeOnBatchMode(batchExecuteContext, (context) -> {
             List<T>[] listArray = TruckUtils.averageSplit(list, batchFlushDataSize);
             int arrayLength = listArray.length;
             for (int i = 0; i < arrayLength; i++) {
@@ -81,33 +80,8 @@ public class CrudMapperImpl<Entity> extends BaseCrudMapperImpl<Entity> implement
                     context.doFlush();
                 }
             }
+            return null;
         });
+        return batchExecuteContext.getEffectiveRecordCount();
     }
-    
-    /**
-     * 处在批处理模式则直接执行，不处在批处理模式则开启批处理模式执行，然后关闭批处理模式
-     *
-     * @param batchExecuteFunction
-     * @return
-     */
-    public int executeOnBatchMode(BatchExecuteFunction batchExecuteFunction) {
-        return TransactionRunner.forceRunInTransaction(configuration, () -> {
-            DefaultBatchContext context = new DefaultBatchContext();
-            if (ExecutorTypeContext.isBatchExecutorMode()) {
-                batchExecuteFunction.batchExecute(context);
-                context.doFlush();
-            } else {
-                try {
-                    ExecutorTypeContext.openBatchExecutorMode();
-                    batchExecuteFunction.batchExecute(context);
-                    context.doFlush();
-                } finally {
-                    ExecutorTypeContext.closeExecutorMode();
-                }
-            }
-            return context.getEffectiveRecordCount();
-        });
-        
-    }
-    
 }

@@ -3,8 +3,8 @@ package org.wanghailu.mybatismix.dialect;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.wanghailu.mybatismix.model.Pageable;
-import org.wanghailu.mybatismix.pagehelper.countsql.CountSqlManager;
-import org.wanghailu.mybatismix.pagehelper.mapping.CountBoundSql;
+import org.wanghailu.mybatismix.page.countsql.CountSqlManager;
+import org.wanghailu.mybatismix.page.mapping.CountBoundSql;
 import org.wanghailu.mybatismix.support.SpiExtension;
 
 import java.util.Properties;

@@ -1,11 +1,11 @@
-package org.wanghailu.mybatismix.pagehelper.mapping;
+package org.wanghailu.mybatismix.page.mapping;
 
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.SqlSource;
 import org.wanghailu.mybatismix.MybatisMixConfiguration;
 import org.wanghailu.mybatismix.dialect.DialectManager;
-import org.wanghailu.mybatismix.pagehelper.countsql.CountSqlManager;
+import org.wanghailu.mybatismix.page.countsql.CountSqlManager;
 
 /**
  * 生成分页count语句的SqlSource

@@ -1,4 +1,4 @@
-package org.wanghailu.mybatismix.pagehelper.countsql;
+package org.wanghailu.mybatismix.page.countsql;
 
 import org.wanghailu.mybatismix.support.SpiExtension;
 

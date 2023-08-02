@@ -1,3 +1,4 @@
 org.wanghailu.mybatismix.apt.processor.AutoCommentAnnotationProcessor
 org.wanghailu.mybatismix.apt.processor.AutoUpdateFieldsAnnotationProcessor
+org.wanghailu.mybatismix.apt.processor.UseBatchExecuteAnnotationProcessor
 org.wanghailu.mybatismix.apt.processor.GenerateExampleClassAnnotationProcessor

@@ -3,6 +3,7 @@ package org.wanghailu.mybatismix.executor;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.transaction.Transaction;
 import org.wanghailu.mybatismix.MybatisMixConfiguration;
+import org.wanghailu.mybatismix.batch.BatchExecutorBinder;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -87,6 +88,7 @@ public class MultiTypeExecutor extends ExecutorDelegateWrapper {
             executor.close(forceRollback);
         }
         defaultExecutor.close(forceRollback);
+        BatchExecutorBinder.clean();
         ExecutorTypeContext.clean();
     }
 

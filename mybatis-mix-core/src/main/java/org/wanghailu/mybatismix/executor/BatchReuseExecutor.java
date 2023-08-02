@@ -118,6 +118,5 @@ public class BatchReuseExecutor extends BatchExecutor {
     @Override
     public void close(boolean forceRollback) {
         super.close(forceRollback);
-        BatchExecutorContext.clean();
     }
 }
