@@ -2,7 +2,7 @@ package org.wanghailu.mybatismix.test.processor;
 
 /*import lombok.Data;*/
 import org.wanghailu.mybatismix.annotation.AutoComment;
-import org.wanghailu.mybatismix.model.EnableExactUpdateModel;
+import org.wanghailu.mybatismix.model.EnableExactUpdate;
 
 import javax.persistence.Transient;
 import java.io.Serializable;
@@ -20,7 +20,7 @@ import static java.util.stream.Collectors.toList;
  */
 /*@Data*/
 @AutoComment
-@EnableExactUpdateModel
+@EnableExactUpdate
 public class TestEntity implements Serializable {
 
     public static final String PREFIX = "framework.shiro";

@@ -4,6 +4,7 @@ import com.sun.tools.javac.code.Symbol;
 import com.sun.tools.javac.code.Type;
 import com.sun.tools.javac.tree.JCTree;
 import com.sun.tools.javac.util.List;
+import org.wanghailu.mybatismix.apt.handler.AddUpdateFieldsHandler;
 import org.wanghailu.mybatismix.apt.help.JavacUtils;
 import org.wanghailu.mybatismix.apt.model.JavacMethodContext;
 import org.wanghailu.mybatismix.apt.model.SymbolClassType;
@@ -24,10 +25,17 @@ public class AddUpdateFieldTreeTranslator extends AddCodeTreeTranslator<AddUpdat
     private ArrayList<String> settableFieldNameList;
 
     private AtomicInteger varNameIndex = new AtomicInteger(0);
-
+    
+    private HashMap<String,Integer> settableFieldMap = new HashMap<>();
+    
     public AddUpdateFieldTreeTranslator(JavacMethodContext context, ArrayList<JCTree.JCVariableDecl> settableFieldList) {
         super(context);
         this.settableFieldNameList = settableFieldList.stream().map(x -> x.name.toString()).collect(Collectors.toCollection(ArrayList::new));
+        int index = 0;
+        for (String fieldName : settableFieldNameList) {
+            settableFieldMap.put(fieldName,index);
+            index++;
+        }
     }
 
     @Override
@@ -88,7 +96,7 @@ public class AddUpdateFieldTreeTranslator extends AddCodeTreeTranslator<AddUpdat
         }
     }
     
-    public static final String addMethodName = "addUpdateField";
+    public static final String addMethodName = "updateFieldAdd";
 
     public class AddSetFieldContext extends TreeNodeContext<AddSetFieldContext> {
         /**
@@ -170,7 +178,7 @@ public class AddUpdateFieldTreeTranslator extends AddCodeTreeTranslator<AddUpdat
                 boolean added = false;
                 for (JCTree.JCStatement stat : jcBlock.stats) {
                     if (stat instanceof JCTree.JCExpressionStatement) {
-                        if (stat.toString().equals(addMethodName+"(\"" + varName + "\");") || stat.toString().equals("this."+addMethodName+"(\"" + varName + "\");") || stat.toString().equals("super."+addMethodName+"(\"" + varName + "\");")) {
+                        if (stat.toString().equals(addMethodName+"(" + getFieldIndexStr(varName) + ");") || stat.toString().equals("this."+addMethodName+"(" + getFieldIndexStr(varName) + ");") || stat.toString().equals("super."+addMethodName+"(" + getFieldIndexStr(varName) + ");")) {
                             added = true;
                             break;
                         }
@@ -181,7 +189,8 @@ public class AddUpdateFieldTreeTranslator extends AddCodeTreeTranslator<AddUpdat
                     appendIndex--;
                 }
                 if (!added) {
-                    JCTree.JCExpressionStatement jcExpressionStatement = context.execExp(addMethodName+"()", treeMaker.Literal(varName));
+                    JCTree.JCExpression fieldIndex = treeMaker.Binary(JCTree.Tag.PLUS, treeMaker.Literal(settableFieldMap.get(varName)), treeMaker.Ident(names.fromString(AddUpdateFieldsHandler.SUPER_FIELD_LENGTH_FOR_FIELD_INDEX)));
+                    JCTree.JCExpressionStatement jcExpressionStatement = context.execExp(addMethodName+"()", fieldIndex);
                     jcBlock.stats = JavacUtils.listAppend(jcBlock.stats, jcExpressionStatement, appendIndex);
                 }
             }
@@ -190,7 +199,7 @@ public class AddUpdateFieldTreeTranslator extends AddCodeTreeTranslator<AddUpdat
                 JCTree.JCFieldAccess fieldAccess = entry.getValue();
                 JCTree.JCExpression exp = fieldAccess.selected;
                 String expStr = exp.toString();
-                String addSettedFieldExpStr = expStr + "."+addMethodName+"(\"" + fieldName + "\")";
+                String addSettedFieldExpStr = expStr + "."+addMethodName+"(" + getFieldIndexStr(fieldName) + ")";
                 boolean added = false;
                 for (JCTree.JCStatement stat : jcBlock.stats) {
                     if (stat instanceof JCTree.JCExpressionStatement) {
@@ -219,13 +228,15 @@ public class AddUpdateFieldTreeTranslator extends AddCodeTreeTranslator<AddUpdat
                         if (jcStatement instanceof JCTree.JCReturn == false) {
                             appendIndex++;
                         }
-                        jcBlock.stats = JavacUtils.listAppend(jcBlock.stats, context.execExp(varName + "."+addMethodName+"()", treeMaker.Literal(fieldName)), appendIndex);
+                        JCTree.JCExpression fieldIndex = treeMaker.Binary(JCTree.Tag.PLUS, treeMaker.Literal(settableFieldMap.get(fieldName)), treeMaker.Ident(names.fromString(AddUpdateFieldsHandler.SUPER_FIELD_LENGTH_FOR_FIELD_INDEX)));
+                        jcBlock.stats = JavacUtils.listAppend(jcBlock.stats, context.execExp(varName + "."+addMethodName+"()", fieldIndex), appendIndex);
                     } else {
                         if (jcStatement instanceof JCTree.JCReturn == false) {
                             appendIndex++;
                         }
+                        JCTree.JCExpression fieldIndex = treeMaker.Binary(JCTree.Tag.PLUS, treeMaker.Literal(settableFieldMap.get(fieldName)), treeMaker.Ident(names.fromString(AddUpdateFieldsHandler.SUPER_FIELD_LENGTH_FOR_FIELD_INDEX)));
                         JCTree.JCExpression newExp = treeMaker.Select(exp, names.fromString(addMethodName));
-                        newExp = treeMaker.Apply(List.nil(), newExp, List.of(treeMaker.Literal(fieldName)));
+                        newExp = treeMaker.Apply(List.nil(), newExp, List.of(fieldIndex));
                         JCTree.JCExpressionStatement jcExpressionStatement = treeMaker.Exec(newExp);
                         jcBlock.stats = JavacUtils.listAppend(jcBlock.stats, jcExpressionStatement, appendIndex);
                     }
@@ -234,5 +245,9 @@ public class AddUpdateFieldTreeTranslator extends AddCodeTreeTranslator<AddUpdat
             return bodyNode;
 
         }
+    }
+    
+    private String getFieldIndexStr(String fieldName){
+        return settableFieldMap.get(fieldName)+" + "+AddUpdateFieldsHandler.SUPER_FIELD_LENGTH_FOR_FIELD_INDEX;
     }
 }

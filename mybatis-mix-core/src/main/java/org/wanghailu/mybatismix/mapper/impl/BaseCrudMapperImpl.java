@@ -46,7 +46,7 @@ public class BaseCrudMapperImpl<Entity> extends BaseMapperImpl<Entity> implement
             logger.warn(EntityUtils.getTableName(entity.getClass()) + "，新增异常，没有被影响的数据！");
         } else {
             if (entity instanceof ExactUpdateEnable) {
-                ((ExactUpdateEnable) entity).wipeUpdateFields();
+                ((ExactUpdateEnable) entity).updateFieldsClear();
             }
         }
         return result;
@@ -125,14 +125,14 @@ public class BaseCrudMapperImpl<Entity> extends BaseMapperImpl<Entity> implement
         }
         if (entity instanceof ExactUpdateEnable) {
             ExactUpdateEnable exactUpdateEntity = (ExactUpdateEnable) entity;
-            if (exactUpdateEntity.gainUpdateFields().size() == 0) {
+            if (exactUpdateEntity.updateFieldsSelect().size() == 0) {
                 logger.warn("表" + EntityUtils.getTableName(entity.getClass()) + "，主键为" + BeanInvokeUtils
                         .getPrimaryKeyValue(entity) + "的数据更新异常，数据没有被修改，无需更新！");
                 return 0;
             }
             int result = realDoUpdateByModel(entity, updateMode);
             if (result > 0) {
-                exactUpdateEntity.wipeUpdateFields();
+                exactUpdateEntity.updateFieldsClear();
             }
             return result;
         } else {

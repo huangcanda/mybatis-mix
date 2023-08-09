@@ -26,21 +26,11 @@ import java.util.Set;
  * 生成实体类对应的Example类
  */
 @SupportedAnnotationTypes("org.wanghailu.mybatismix.annotation.EnableGenerateExampleClass")
-public class GenerateExampleClassAnnotationProcessor extends BaseAnnotationProcessor {
+public class GenerateExampleClassAnnotationProcessor extends BaseGeneratorAnnotationProcessor {
 
-    boolean generated = false;
     
-    boolean isBscMavenPlugin =false;
     @Override
-    public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        if (roundEnv.processingOver()) {
-            return false;
-        }
-        if(generated){
-            return false;
-        }
-        generated = true;
-        isBscMavenPlugin = checkBscMavenPlugin();
+    protected boolean doProcess(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         for (TypeElement annotation : annotations) {
             Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(annotation);
             for (Element classElement : elements) {
@@ -51,7 +41,7 @@ public class GenerateExampleClassAnnotationProcessor extends BaseAnnotationProce
         }
         return false;
     }
-
+    
     public void createExampleClass(Element classElement, List<String> fieldList) {
         String className = ((TypeElement) classElement).getQualifiedName().toString();
         String simpleClassName = classElement.getSimpleName().toString();
@@ -69,28 +59,15 @@ public class GenerateExampleClassAnnotationProcessor extends BaseAnnotationProce
         String queryExample = packageName + "." + simpleClassName + "QueryExample";
         generateJavaFile(queryExample, handler.generateQueryExampleTest());
     }
-
-    protected void generateJavaFile(String className, String code) {
-        if(isBscMavenPlugin){
-            return;
-        }
-        try {
-            JavaFileObject sourceFile = filer.createSourceFile(className);
-            try(Writer writer = sourceFile.openWriter()){
-                writer.write(code);
-                writer.flush();
-            }
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-            processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR, e.getMessage());
-        }
-    }
-
+    
     protected void visitEntityFieldList(Element classElement, List<String> fieldList) {
         for (Element fieldElement : classElement.getEnclosedElements()) {
             if (ElementKind.FIELD == fieldElement.getKind()) {
                 Set<Modifier> modifiers = fieldElement.getModifiers();
                 if (modifiers.contains(Modifier.STATIC)) {
+                    continue;
+                }
+                if (modifiers.contains(Modifier.TRANSIENT)) {
                     continue;
                 }
                 Transient aTransient = fieldElement.getAnnotation(Transient.class);
@@ -143,13 +120,4 @@ public class GenerateExampleClassAnnotationProcessor extends BaseAnnotationProce
         return type;
     }
     
-    private boolean checkBscMavenPlugin(){
-        StackTraceElement[] stackTraceElements =Thread.currentThread().getStackTrace();
-        for (StackTraceElement stackTraceElement : stackTraceElements) {
-            if(stackTraceElement.getClassName().startsWith("org.bsc.maven.plugin.processor")){
-                return true;
-            }
-        }
-        return false;
-    }
 }

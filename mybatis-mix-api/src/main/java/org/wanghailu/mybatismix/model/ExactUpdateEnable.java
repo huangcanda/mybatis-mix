@@ -10,19 +10,19 @@ import java.util.Collection;
 public interface ExactUpdateEnable {
     
     /**
-     *
-     * @param fieldName
+     * 添加字段的index
+     * @param fieldNameIndex
      */
-    void addUpdateField(String fieldName);
+    void updateFieldAdd(int fieldNameIndex);
     /**
      * 获得记录
      * @return
      */
-    Collection<String> gainUpdateFields();
+    Collection<String> updateFieldsSelect();
     /**
      * 清除记录
      * @return
      */
-    void wipeUpdateFields();
+    void updateFieldsClear();
 
 }

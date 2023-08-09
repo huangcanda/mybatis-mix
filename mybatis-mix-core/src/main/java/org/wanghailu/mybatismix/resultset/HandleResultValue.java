@@ -15,7 +15,7 @@ public class HandleResultValue {
         String databaseId = MybatisContext.getDatabaseId();
         if (obj instanceof ExactUpdateEnable) {
             ExactUpdateEnable exactUpdateRecord = (ExactUpdateEnable) obj;
-            exactUpdateRecord.wipeUpdateFields();
+            exactUpdateRecord.updateFieldsClear();
             //TODO 特殊处理，需进行抽象
         } else if (obj instanceof Map && "oracle".equals(databaseId)) {
             Map<String, Object> resultMap = (Map) obj;

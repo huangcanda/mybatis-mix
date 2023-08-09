@@ -70,7 +70,7 @@ public class SqlProviderHelper {
             Object currentModelPropertyValue = null;
             boolean isUpdateField = false;
             if (isExactUpdateRecord) {
-                if (exactUpdateRecord.gainUpdateFields().contains(currentModelPropertyDescriptor.getFieldName())) {
+                if (exactUpdateRecord.updateFieldsSelect().contains(currentModelPropertyDescriptor.getFieldName())) {
                     isUpdateField = true;
                 }
             } else if (UpdateModeEnum.ALL.getValue() == updateMode) {

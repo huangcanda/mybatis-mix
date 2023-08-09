@@ -4,40 +4,31 @@ import org.wanghailu.mybatismix.annotation.EnableGenerateExampleClass;
 import org.wanghailu.mybatismix.annotation.FillNowOnInsert;
 import org.wanghailu.mybatismix.annotation.FillNowOnUpdate;
 import org.wanghailu.mybatismix.annotation.LogicDelete;
-import org.wanghailu.mybatismix.model.EnableExactUpdateModel;
+import org.wanghailu.mybatismix.model.BaseExactUpdateRecord;
+import org.wanghailu.mybatismix.model.EnableExactUpdate;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
-/**
- * @author cdhuang
- * @date 2023/1/6
- */
+
 @Entity
 @Table(name = "t_user")
-@EnableExactUpdateModel
+@EnableExactUpdate
 @LogicDelete
 @EnableGenerateExampleClass
-public class UserEntity {
+public class UserEntity extends BaseExactUpdateRecord {
     
     @Id
     private Long id;
-    
     private String userName;
-    
     private String password;
-    
     private String address;
-    
     private String createUser;
-    
     @FillNowOnInsert
     private Date createTime;
-    
     private String updateUser;
-    
     @FillNowOnInsert
     @FillNowOnUpdate
     private Date updateTime;

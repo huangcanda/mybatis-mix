@@ -8,7 +8,7 @@ import org.wanghailu.mybatismix.apt.model.JavacContext;
  * @author cdhuang
  * @date 2021/11/19
  */
-public abstract class  BaseAnnotationHandler<T extends JavacContext> {
+public abstract class BaseAnnotationHandler<T extends JavacContext> {
 
     protected T context;
 

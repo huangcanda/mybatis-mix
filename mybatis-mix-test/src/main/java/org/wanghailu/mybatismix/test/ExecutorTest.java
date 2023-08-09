@@ -32,7 +32,8 @@ public class ExecutorTest {
             return userEntityList;
         }
         List<Long> ids = userEntityList.stream().map(UserEntity::getId).collect(Collectors.toList());
-        return userMapper.selectListByIds(ids.toArray(new Long[0]));
+        Long[] array = ids.toArray(new Long[0]);
+        return userMapper.selectListByIds(array);
     }
     
     @MybatisBatchExecute

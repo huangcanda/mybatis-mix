@@ -42,7 +42,6 @@ public class CommonTestOnSpring extends BaseTestOnSpring {
     @Autowired
     private UserMapper userMapper;
     @Test
-    @MybatisBatchExecute
     public void crudTest() {
         String[] beanNamesForType= SpringUtils.getBeanFactory().getBeanNamesForType(ICrudMapper.class);
         System.out.println(beanNamesForType);

@@ -2,7 +2,7 @@ package org.wanghailu.mybatismix.test.entity;
 
 import org.wanghailu.mybatismix.annotation.EnableGenerateExampleClass;
 import org.wanghailu.mybatismix.annotation.LogicDelete;
-import org.wanghailu.mybatismix.model.EnableExactUpdateModel;
+import org.wanghailu.mybatismix.model.EnableExactUpdate;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -16,33 +16,33 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name = "t_vip_user")
-@EnableExactUpdateModel
 @LogicDelete
 @EnableGenerateExampleClass
-public class VipUserEntity extends UserEntity{
-
+@EnableExactUpdate
+public class VipUserEntity extends UserEntity {
+    
     private int vipLevel;
-
+    
     private LocalDateTime vipExpirationTime;
     
     @Transient
     private String vipDetail;
-
+    
     @Version
     private Integer lock;
-
+    
     public int getVipLevel() {
         return vipLevel;
     }
-
+    
     public void setVipLevel(int vipLevel) {
         this.vipLevel = vipLevel;
     }
-
+    
     public LocalDateTime getVipExpirationTime() {
         return vipExpirationTime;
     }
-
+    
     public void setVipExpirationTime(LocalDateTime vipExpirationTime) {
         this.vipExpirationTime = vipExpirationTime;
     }
@@ -54,11 +54,11 @@ public class VipUserEntity extends UserEntity{
     public void setVipDetail(String vipDetail) {
         this.vipDetail = vipDetail;
     }
-
+    
     public Integer getLock() {
         return lock;
     }
-
+    
     public void setLock(Integer lock) {
         this.lock = lock;
     }
